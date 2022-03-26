@@ -5,6 +5,23 @@ ws_events :: struct {
     onmessage: #type (fd: s32, message: *u8, size: u64, type: s32) -> void #c_call;
 }
 
+WS_FIN: s32 : 128;
+WS_FIN_SHIFT: s32 : 7;
+WS_FR_OP_CONT: s32 : 0;
+WS_FR_OP_TXT: s32 : 1;
+WS_FR_OP_BIN: s32 : 2;
+WS_FR_OP_CLSE: s32 : 8;
+WS_FR_OP_PING: s32 : 0x9;
+WS_FR_OP_PONG: s32 : 0xA;
+WS_FR_OP_UNSUPPORTED: s32 : 0xF;
+WS_CLSE_NORMAL: s32 : 1000;
+WS_CLSE_PROTERR: s32 : 1002;
+WS_CLSE_INVUTF8: s32 : 1007;
+WS_STATE_CONNECTING: s32 : 0;
+WS_STATE_OPEN: s32 : 1;
+WS_STATE_CLOSING: s32 : 2;
+WS_STATE_CLOSED: s32 : 3;
+
 get_handshake_accept :: (ws_key: *u8, dest: **u8) -> s32 #foreign wsserver;
 // EXPORT int get_handshake_accept(char *wsKey, unsigned char **dest);
 get_handshake_response :: (hsrequest: *u8, hsresponse: **u8) -> s32 #foreign wsserver;
