@@ -1,0 +1,11 @@
+build/
+wsServer/*.o
+wsServer/*.a
+wsServer/send_receive
+wsServer/ws_file
+wsServer/toyws_test
+wsServer/build/
+wsServer/doc/doxygen/html
+wsServer/doc/doxygen/xml
+wsServer/tests/wsserver_autobahn/report
+wsServer/tests/fuzzy/out/
