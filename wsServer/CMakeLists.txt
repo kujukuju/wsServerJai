@@ -20,6 +20,12 @@ project(ws C)
 set(CMAKE_C_STANDARD 99)
 set(BUILD_SHARED_LIBS TRUE)
 
+set(CMAKE_BUILD_TYPE RelWithDebInfo)
+
+set(CMAKE_CXX_FLAGS "-Wall -Wextra")
+set(CMAKE_CXX_FLAGS_DEBUG "-g")
+set(CMAKE_CXX_FLAGS_RELEASE "-O3")
+
 include_directories(include)
 
 add_library(ws
